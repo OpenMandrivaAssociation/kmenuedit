@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kmenuedit
-Version: 5.2.1
+Version: 5.2.2
 Release: 1
 Source0: ftp://ftp.kde.org/pub/kde/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Menu Editor
@@ -21,10 +21,13 @@ BuildRequires: cmake(KF5IconThemes)
 BuildRequires: cmake(KF5KIO)
 BuildRequires: cmake(KF5KHtml)
 BuildRequires: cmake(KF5Solid)
+BuildRequires: pkgconfig(Qt5Core)
+BuildRequires: pkgconfig(Qt5DBus)
+BuildRequires: pkgconfig(Qt5Xml)
 BuildRequires: ninja
 
 %description
-KDE Plasma 5 Menu Editor
+KDE Plasma 5 Menu Editor.
 
 %prep
 %setup -qn %{name}-%{plasmaver}
@@ -47,4 +50,4 @@ DESTDIR="%{buildroot}" ninja -C build install %{?_smp_mflags}
 %{_datadir}/icons/*/*/*/kmenuedit*
 %{_datadir}/kmenuedit
 %{_datadir}/kxmlgui5/kmenuedit
-%doc %{_docdir}/HTML/en/kmenuedit
+%doc %{_docdir}/HTML/*/kmenuedit
