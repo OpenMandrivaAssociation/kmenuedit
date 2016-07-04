@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kmenuedit
-Version: 5.6.5
+Version: 5.7.0
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Menu Editor
@@ -39,7 +39,7 @@ KDE Plasma 5 Menu Editor.
 %install
 %ninja_install -C build
 
-%find_lang %{name}
+%find_lang %{name} || touch %{name}.lang
 
 %files -f %{name}.lang
 %{_bindir}/kmenuedit
