@@ -1,4 +1,5 @@
 removed_sources:
   kmenuedit-5.12.3.tar.xz: 2ba34c99b6684d1ea5c30370d6ae36ac07ed6186
-sources:
   kmenuedit-5.12.6.tar.xz: b911f278fde6efb1e334ca0d0877cac704c99279
+sources:
+  kmenuedit-5.12.7.tar.xz: a17798cd77f037a798f58bd464b45dde2be528db
