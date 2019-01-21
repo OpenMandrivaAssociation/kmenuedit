@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 
 Name: kmenuedit
-Version: 5.14.5
+Version: 5.14.90
 Release: 1
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/%{name}-%{version}.tar.xz
 Summary: KDE Plasma 5 Menu Editor
@@ -43,6 +43,7 @@ KDE Plasma 5 Menu Editor.
 %find_lang %{name} || touch %{name}.lang
 
 %files -f %{name}.lang
+%{_sysconfdir}/xdg/%{name}.categories
 %{_bindir}/kmenuedit
 %{_libdir}/libkdeinit5_kmenuedit.so
 %{_datadir}/applications/org.kde.kmenuedit.desktop
