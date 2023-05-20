@@ -3,7 +3,7 @@
 %define plasmaver %(echo %{version} |cut -d. -f1-3)
 %define git 20230520
 
-Name: kmenuedit
+Name: plasma6-kmenuedit
 Version:	5.240.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
