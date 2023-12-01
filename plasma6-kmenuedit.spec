@@ -31,8 +31,6 @@ BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Xml)
-# Prevent pulling in Plasma 5
-BuildRequires: plasma6-xdg-desktop-portal-kde
 
 %description
 KDE Plasma 6 Menu Editor.
