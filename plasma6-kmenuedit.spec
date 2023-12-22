@@ -4,7 +4,7 @@
 #define git 20231103
 
 Name: plasma6-kmenuedit
-Version:	5.90.0
+Version:	5.91.0
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/kmenuedit/-/archive/master/kmenuedit-master.tar.bz2#/kmenuedit-%{git}.tar.bz2
