@@ -6,7 +6,7 @@
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
 Name: plasma6-kmenuedit
-Version:	6.1.2
+Version:	6.1.3
 Release:	%{?git:0.%{git}.}1
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/kmenuedit/-/archive/%{gitbranch}/kmenuedit-%{gitbranchd}.tar.bz2#/kmenuedit-%{git}.tar.bz2
