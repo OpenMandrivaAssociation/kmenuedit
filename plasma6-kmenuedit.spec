@@ -14,7 +14,7 @@ Source0:	https://invent.kde.org/plasma/kmenuedit/-/archive/%{gitbranch}/kmenuedi
 Source0: http://download.kde.org/%{stable}/plasma/%{plasmaver}/kmenuedit-%{version}.tar.xz
 %endif
 Summary: KDE Plasma 6 Menu Editor
-URL: http://kde.org/
+URL: https://kde.org/
 License: GPL
 Group: System/Libraries
 BuildRequires: cmake(ECM)
