@@ -5,9 +5,9 @@
 %define gitbranch Plasma/6.0
 %define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 
-Name: plasma6-kmenuedit
+Name: kmenuedit
 Version:	6.3.4
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/kmenuedit/-/archive/%{gitbranch}/kmenuedit-%{gitbranchd}.tar.bz2#/kmenuedit-%{git}.tar.bz2
 %else
@@ -33,27 +33,16 @@ BuildRequires: cmake(Qt6)
 BuildRequires: cmake(Qt6Core)
 BuildRequires: cmake(Qt6DBus)
 BuildRequires: cmake(Qt6Xml)
+BuildSystem:	cmake
+BuildOption:	-DBUILD_QCH:BOOL=ON
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+# Renamed 2025-05-01 after 6.0
+%rename plasma6-kmenuedit
 
 %description
 KDE Plasma 6 Menu Editor.
 
-%prep
-%autosetup -p1 -n kmenuedit-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DBUILD_QCH:BOOL=ON \
-	-DBUILD_WITH_QT6:BOOL=ON \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja_build -C build
-
-%install
-%ninja_install -C build
-
-%find_lang kmenuedit --with-html
-
-%files -f kmenuedit.lang
+%files -f %{name}.lang
 %{_datadir}/qlogging-categories6/kmenuedit.categories
 %{_bindir}/kmenuedit
 %{_datadir}/applications/org.kde.kmenuedit.desktop
