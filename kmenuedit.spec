@@ -7,7 +7,7 @@
 
 Name: kmenuedit
 Version:	6.4.4
-Release:	%{?git:0.%{git}.}1
+Release:	%{?git:0.%{git}.}2
 %if 0%{?git:1}
 Source0:	https://invent.kde.org/plasma/kmenuedit/-/archive/%{gitbranch}/kmenuedit-%{gitbranchd}.tar.bz2#/kmenuedit-%{git}.tar.bz2
 %else
